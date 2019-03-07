@@ -235,7 +235,7 @@ export class AppModule { }
 ```
 
 We will follow the same step for any other module that we use.
-Let's run the application see everything is working, run the command `ng serve'
+Let's run the application see everything is working, run the command ng serve.
 
 Output:
 
