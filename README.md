@@ -12,10 +12,10 @@ Let's try to understand the concept with example: Say we have a SPA which have C
 * There is a link on customer-list page which will route to our customer-detail page (for any random ID say 123). Similarly, for product-list page.
 * There is a link on customer-detail page to navigate back to customer-list.
 
-## Step 1:
-![alt text](URL)
+### Step 1:
+![alt text](https://github.com/jagdishkumar17/Lazy-Routing-In-angular/blob/master/images/folder%20structure.PNG)
 
-### There are two modules, Customers and Products, which contains:
+#### There are two modules, Customers and Products, which contains:
 * Customer-detail module consists of,
   * customer-detail.component.html
   * customer-detail.component.ts
@@ -26,7 +26,7 @@ Let's try to understand the concept with example: Say we have a SPA which have C
 
 Similarly, we will do for all the other modules.
 
-## Step 2:
+### Step 2:
 ```
 import { Component, OnInit } from '@angular/core';
 
@@ -44,13 +44,13 @@ export class CustomersComponent implements OnInit {
 ```
 we need <router-outlet> to render the child component in it.
 
-## Step 3: Now we create routes for customer-details module. So, In the customer-detail-index.ts has export statements of all the components needed
+### Step 3: Now we create routes for customer-details module. So, In the customer-detail-index.ts has export statements of all the components needed
 
 ```
 export { CustomerDetailComponent } from '../customer-detail.component';
 ```
 
-## Step 4: Create routes in customer-detail-route.ts:
+### Step 4: Create routes in customer-detail-route.ts:
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -75,7 +75,7 @@ const routes: Routes = [
 
 ```
 
-## Step 5: Configure the route in customer-detail-module.ts: 
+### Step 5: Configure the route in customer-detail-module.ts: 
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -93,8 +93,7 @@ import { CustomerDetailComponent } from './customer-detail-index';
 
   export class CustomersDetailModule { }
 ```
-
-## Step 6: In customer-route.ts register the customer routes like this:
+### Step 6: In customer-route.ts register the customer routes like this:
 ```
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -128,7 +127,7 @@ export class CustomersRoutingModule { }
 NOTE: Here need to export RouterModule to allow these routes to be used outside this module.
 
 
-## Step 7: In customer-module.ts file, configure the customer-route.ts:
+### Step 7: In customer-module.ts file, configure the customer-route.ts:
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -147,7 +146,8 @@ import { CustomersComponent } from '../customers.component';
 export class CustomersModule { }
 
 ```
-## Step 8: Register all the routes in app.route.ts:
+### Step 8: Register all the routes in app.route.ts:
+
 ```
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -188,7 +188,8 @@ export class AppRoutingModule { }
 ```
 * We will not import any lazy loading module here otherwise those modules would have been loaded at the time of application start.
 
-## Step 9: We now need to register our app.route module into our app.module.ts file
+### Step 9: We now need to register our app.route module into our app.module.ts file
+
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -218,7 +219,7 @@ export class AppModule { }
 
 ```
 
-## Step 10: Add two buttons to app.component.html and route them to our modules:
+### Step 10: Add two buttons to app.component.html and route them to our modules:
 ```
 <div style="text-align:center">
   <h1>
@@ -234,18 +235,18 @@ export class AppModule { }
 ```
 
 We will follow the same step for any other module that we use.
-Let's run the application see everything is working, run the command `ng serve'
+Let's run the application see everything is working, run the command ng serve.
 
 Output:
 
-##Home Page:
-![alt text](URL)
+### Home Page:
+![alt text](https://github.com/jagdishkumar17/Lazy-Routing-In-angular/blob/master/images/Output%201.PNG)
 
-##Customer List Page:
-![alt text](URL)
+### Customer List Page:
+![alt text](https://github.com/jagdishkumar17/Lazy-Routing-In-angular/blob/master/images/Output%202.PNG)
 
-##Customer Details Page:
-![alt text](URL)
+### Customer Details Page:
+![alt text](https://github.com/jagdishkumar17/Lazy-Routing-In-angular/blob/master/images/Output%203.PNG)
 
 
 
