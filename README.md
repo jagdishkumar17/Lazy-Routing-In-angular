@@ -1,5 +1,17 @@
 # Lazy Loading in Angular
 
+## Angular Module Loading: Eager and  Lazy.
+A module can be loaded Eagerly or Lazily. The application module i.e. AppModule is loaded eagerly before application starts. But the feature modules can be loaded either Eagerly or Lazily.
+* Eager loading is loading modules before application starts.
+* Lazy loading is loading modules on demand.
+
+### Why do we use Lazy loading over Eager loading? Let's see!
+* In Eager loading, all the feature modules will be loaded before the application starts. So the application start will be slow.
+* Eager loading is usefull for small Applications.
+
+* In lazy loading, feature module will be loaded on demand and hence application start will be faster.
+* Lazy loading is useful when the application size is growing.
+
 ## What is Lazy loading?
 
 Lazy loading is a technique in Angular that allows applications to load modules only when they are needed i.e.  when you first visit the route(s) corresponding to component(s) belonging to the lazy loaded module. It is a great strategy to reduce the time to interactive (TTI) of a single page application (SPA) and thereby provide a better user experience
